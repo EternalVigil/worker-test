@@ -18,7 +18,7 @@ export const Counter = () => {
     useEffect(() => {
         delayWorker.onmessage = (event) => {
             if(event?.data) {
-                setDelayCounter(event.data);
+                setDelayCounter(event?.data?.newCount);
             }
         };
 

@@ -8,6 +8,6 @@ const updateDelayCounter = (currentValue) => {
 onmessage = async (event) => {
     if(event?.data?.msg === 'updateDelayCount') {
         const newCount = updateDelayCounter(event.data.currentCount);
-        postMessage(newCount);
+        postMessage({ msg: 'delay count', newCount: newCount});
     }
 }
